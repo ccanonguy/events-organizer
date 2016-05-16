@@ -1,9 +1,9 @@
-# Events Organizer
+Events Organizer
 ===
 
 A python based text processor which uses NLU to keep track of the events.
 
-To get started with contribution,
+To get started with contributing,
 
 ### Getting started with git
 
