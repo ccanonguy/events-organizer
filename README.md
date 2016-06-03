@@ -45,3 +45,12 @@ To get started with contributing,
 * Execute in the terminal,
 		
 		source ./env/bin/activate
+
+* Install nltk using,
+
+		pip install nltk
+		
+* Download nltk data by typing into python interpreter,
+
+		import nltk
+		nltk.download()
