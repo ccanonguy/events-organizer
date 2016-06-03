@@ -12,7 +12,7 @@ lng = "lng"
 created = "created"
 modified = "modified"
 
-[
+data = [
 {
 id: "1",
 name: "Advanced Centre for Research in Electronics",
