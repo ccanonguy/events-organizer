@@ -54,3 +54,7 @@ To get started with contributing,
 
 		import nltk
 		nltk.download()
+		
+* Install dateutil for parsing datetime.
+
+		pip install python-dateutil
