@@ -1,4 +1,5 @@
 import json
+import dateutil.parser as datep
 
 def clean_sentences(sentences):
     """Remove the whitespace at the ends of the words."""
@@ -46,3 +47,13 @@ def clean_relevant(relevant, skip_tag):
     for word in skip_tag:
         while(word in relevant):
             relevant.remove(word)
+
+def check_time(text):
+    """Checks the time from the text."""
+    text = text.replace('.', ' ').replace('"', ' ').replace('\'', '')
+    text = text.replace('?', ' ').replace('\n', ' ').replace('\t', ' ')
+    try:
+        event_time = datep.parse(text, fuzzy=True, dayfirst=True)
+    except ValueError:
+        event_time = 'Couldn\'t extract time properly.'
+    return event_time

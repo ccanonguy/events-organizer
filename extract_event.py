@@ -2,6 +2,7 @@ from nltk.tokenize.regexp import RegexpTokenizer
 
 import nltk, re
 import settings
+import datetime
 import event_functions as ef
 
 class Extract_event():
@@ -19,6 +20,10 @@ class Extract_event():
         """Print info regarding the event."""
         print(self.event)
         print(self.venue)
+        if type(self.time) == datetime.datetime:
+            print(self.time.strftime('%d/%m/%Y at %I:%M %p'))
+        elif type(self.time) == str:
+            print(self.time)
         
     def pos_tag(self):
         """Tag the words of the sentences."""
@@ -42,4 +47,4 @@ class Extract_event():
         
     def extract_time(self):
         """Extracts the date time from the mail."""
-        self.time = ''
+        self.time = ef.check_time(self.text)
